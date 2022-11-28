@@ -8,7 +8,7 @@ const ReportComponents = () =>{
 
     return (
         <div>
-            {name}dsddsaddsddsdsadsadasdkjhk
+            {name}dsdssda
         </div>
     );
 }
