@@ -33,8 +33,8 @@ function App() {
       const amounts = items.map((items) => items.amount)
       const income = amounts.filter(e => e>0).reduce((total,e) => total+=e,0)
       const expense = (amounts.filter(e => e<0).reduce((total,e) => total+=e,0))*-1
-      setIncome(income)
-      setExpense(expense)
+      setIncome(income.toFixed(2))
+      setExpense(expense.toFixed(2))
     },[items,reportIncome,reportExpense])
 
     // const [showReport,setShowReport] = useState(true)
@@ -71,7 +71,7 @@ function App() {
             </li>
           </ul>  
           <Routes>
-            <Route index path="/" 
+            <Route path="/" 
               element={<ReportComponents/>}>
             </Route>
             <Route path="/insert" 
