@@ -6,7 +6,7 @@
     border-right: 5px solid #2ccc71;
 }
 
-li {
+.list {
     color:"black";
     list-style-type: none;
     background-color: white;
