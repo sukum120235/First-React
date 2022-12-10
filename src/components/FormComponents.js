@@ -26,6 +26,19 @@ const FormComponents = props =>{
         setAmount('')
     }
 
+    const saveItemminus = (e) =>{        
+        e.preventDefault()    
+        const itemData = {
+            id:uuidv4(),
+            title:title,
+            amount:Number(amount)*-1
+        }
+        props.onAdditem(itemData)
+        setTitle('')
+        setAmount('')
+    }
+    
+
     useEffect(() => {
         const checkdata = title.trim().length > 0 && amount !== ""
         setFormvalid(checkdata)
@@ -42,8 +55,9 @@ const FormComponents = props =>{
                     <label>จำนวนเงิน</label>
                     <input type="number" placeholder="จำนวนเงิน" onChange={inputAmount} value={amount}></input>
                 </div>
-                <div>
-                    <button type="submit" className="btn" disabled={!formValid}>เพิ่มข้อมูล</button>
+                <div className="btnstyle">
+                    <button type="submit" className="btngreen" disabled={!formValid} onClick={saveItem}>รายรับ</button>
+                    <button type="submit" className="btnred" disabled={!formValid} onClick={saveItemminus}>รายจ่าย</button>
                 </div>
             </form>
         </div>

@@ -6,7 +6,8 @@ const ReportComponents = () =>{
 
     const {income , expense} = useContext(DataContext)
     const formatNumber=(num)=> {
-        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+        num = "" + num;
+        return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,').toString()
     }
     return (
         <div>

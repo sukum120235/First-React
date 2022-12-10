@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { useEffect } from "react";
 import Transaction from "./components/Transaction";
 import "./App.css";
 import FormComponents from "./components/FormComponents";
@@ -11,22 +11,20 @@ const Header = {color:"red", textAlign:"center", fontSize:"1.5rem"}
 
 function App() {
 
-  const initData = [
-    {id: 1 ,title: 'เงินเดือน' , amount: 20000},
-    {id: 2 ,title: 'ค่ารถ' , amount: -2000},
-    {id: 3 ,title: 'ค่าอาหาร' , amount: -9800},
-    {id: 4 ,title: 'ค่าผ่อนบ้าน' , amount: -9800},
-    {id: 5 ,title: 'ค่าน้ำ-ค่าไฟ' , amount: -1500},
-  ]
-    const [items,setItems] = useState(initData)
-    // const [items,setItems] = useState([])
+  // const initData = [
+  //   {id: 1 ,title: 'เงินเดือน' , amount: 20000},
+  //   {id: 2 ,title: 'ค่ารถ' , amount: -2000},
+  //   {id: 3 ,title: 'ค่าอาหาร' , amount: -9800},
+  //   {id: 4 ,title: 'ค่าผ่อนบ้าน' , amount: -9800},
+  //   {id: 5 ,title: 'ค่าน้ำ-ค่าไฟ' , amount: -1500},
+  // ]
+  //   const [items,setItems] = useState(initData)
+    const [items,setItems] = useState([])
     const [reportIncome,setIncome]= useState()
     const [reportExpense,setExpense]= useState()
 
     const onAddNewitem = (newItem) => {
-      setItems((prevItem) =>{
-          return [newItem,...prevItem]
-        })
+      setItems([newItem,...items])
     }
 
     useEffect(() =>{
